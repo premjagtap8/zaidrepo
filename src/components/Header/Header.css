@@ -1019,3 +1019,102 @@
   background-color: var(--header-item-hover-bg);
   color: var(--header-navy);
 }
+
+
+/* ==========================================================================
+   MOBILE HOME LAYOUT (Flipkart style)
+   ========================================================================== */
+
+/* hidden by default, so desktop is untouched */
+.mobile-category-row {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  /* top bar: hamburger | logo | icons */
+  .header-main {
+    gap: 10px;
+    min-height: 0;
+    padding: 10px 12px;
+  }
+
+  .header-main > a {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .header-logo {
+    flex: 0 0 auto;
+    width: 120px;
+  }
+
+  .mobile-menu-toggle {
+    padding: 0;
+  }
+
+  /* hidden on mobile: cart and account live in the bottom nav */
+  .quote-button,
+  .header-action,
+  .category-select,
+  .header-icon-btn[aria-label="Cart"],
+  .header-icon-btn[aria-label="Dashboard"] {
+    display: none;
+  }
+
+  /* search row */
+  .header-search {
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .header-search input {
+    font-size: 13px;
+  }
+
+  /* category icon row */
+  .mobile-category-row {
+    display: flex;
+    gap: 6px;
+    padding: 8px 8px 6px;
+    overflow-x: auto;
+    border-top: 1px solid var(--header-border);
+    scrollbar-width: none;
+  }
+
+  .mobile-category-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-category-item {
+    display: flex;
+    flex: 1 0 auto;
+    min-width: 68px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 4px;
+    color: var(--header-navy);
+    text-decoration: none;
+    font-size: 11px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .mobile-category-item span {
+    text-transform: lowercase;
+  }
+
+  .mobile-category-item span::first-letter {
+    text-transform: uppercase;
+  }
+
+  .mobile-category-item.active {
+    color: var(--header-accent-green);
+    border-bottom-color: var(--header-accent-green);
+  }
+
+  /* the header is fixed, so a long drawer must scroll inside itself */
+  .mobile-drawer {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+  }
+}

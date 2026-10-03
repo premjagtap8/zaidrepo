@@ -235,3 +235,118 @@ a.contact-item:hover .contact-icon-box {
   color: #334155;
 }
 
+/* =====================================================
+   MOBILE FOOTER (phones, 800px and below)
+   Everything new is inside this media query, so desktop
+   is not affected.
+===================================================== */
+
+@media (max-width: 800px) {
+  /* Smaller footer, and extend the dark background into the
+     space that body.has-bottom-nav reserves for the bottom nav.
+     This removes the white strip under the footer. */
+  .footer-section {
+    padding: 24px 0 16px;
+    box-shadow: 0 calc(64px + env(safe-area-inset-bottom)) 0 0 #0b1320;
+  }
+
+  .footer-container {
+    padding: 0 16px;
+  }
+
+  /* Hide only the logo + description on mobile */
+  .footer-col-brand {
+    display: none;
+  }
+
+  /* Quick Links stay visible: full width row above Contact / Follow Us */
+  .footer-col-quicklinks {
+    grid-column: 1 / -1;
+  }
+
+  .footer-col-quicklinks .footer-links-grid {
+    gap: 8px 16px;
+  }
+
+  .footer-col-quicklinks .footer-link-item {
+    font-size: 0.8125rem;
+  }
+
+  /* Contact Us and Follow Us side by side */
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 20px 16px;
+  }
+
+  .footer-col {
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+
+  /* Contact: tighter, and long text (email) wraps instead of overflowing */
+  .contact-list {
+    gap: 10px;
+  }
+
+  .contact-item {
+    gap: 8px;
+    font-size: 0.8125rem;
+    min-width: 0;
+  }
+
+  .contact-item span {
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  .contact-icon-box {
+    padding: 6px;
+  }
+
+  /* Email is a bit smaller so it fits on one line */
+  a.contact-item[href^="mailto"] span {
+    font-size: 0.75rem;
+  }
+
+  /* Follow Us: slightly smaller */
+  .social-list {
+    gap: 10px;
+  }
+
+  .social-link-item {
+    gap: 8px;
+    font-size: 0.8125rem;
+  }
+
+  .social-icon-box {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Bottom bar: 7 policy links wrap onto several centered lines */
+  .footer-bottom {
+    margin-top: 24px;
+    padding-top: 16px;
+    padding-bottom: 64px; /* keeps the policy links clear of the WhatsApp button */
+    gap: 10px;
+  }
+
+  .copyright-text {
+    text-align: center;
+  }
+
+  .policy-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+  }
+
+  /* The "|" separators look odd when links wrap, so hide them on mobile */
+  .policy-sep {
+    display: none;
+  }
+}

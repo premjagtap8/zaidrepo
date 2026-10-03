@@ -1,4 +1,5 @@
 import ChangePassword from "./pages/Admin/Customer/ChangePassword.jsx";
+import BottomNav from "./components/BottomNav/BottomNav.jsx";
 
 // import { Routes, Route, useLocation } from "react-router-dom";
 // import { useState, useEffect, useRef } from "react";
@@ -4388,6 +4389,8 @@ function App() {
       ===================================================== */}
 
       {showWhatsApp && <WhatsAppWidget />}
+
+      {!hideWebsiteHeader && <BottomNav />}
 
     </div>
   );

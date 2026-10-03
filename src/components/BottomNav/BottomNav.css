@@ -1,0 +1,64 @@
+/* Hidden everywhere except phones, so desktop is untouched */
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40; /* below the WhatsApp button (z-50) */
+    display: flex;
+    justify-content: space-around;
+    padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+    background: var(--header-bg, #ffffff);
+    border-top: 1px solid var(--header-border, #e5e8ed);
+    box-shadow: 0 -2px 8px rgba(20, 32, 51, 0.06);
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 0;
+    color: var(--header-muted, #687386);
+    text-decoration: none;
+    font-size: 11px;
+  }
+
+  .bottom-nav-item.active {
+    color: var(--header-accent-green, #16a34a);
+  }
+
+  .bottom-nav-icon {
+    position: relative;
+    display: flex;
+  }
+
+  .bottom-nav-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    min-width: 16px;
+    padding: 0 4px;
+    border-radius: 9999px;
+    background: var(--header-accent-green, #16a34a);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  /* keeps page content clear of the fixed bar */
+  body.has-bottom-nav {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+}

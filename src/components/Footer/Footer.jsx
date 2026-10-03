@@ -1,152 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
-// import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-
-// import logo from "../../assets/images/logo.png";
-// import "./Footer.css";
-
-// const Footer = () => {
-//   const quickLinks = [
-//     { name: "Home", path: "/" },
-//     { name: "Shop", path: "/shop" },
-//     { name: "Rental", path: "/rental" },
-//     { name: "Repair Service", path: "/repair-service" },
-//     { name: "Categories", path: "/categories" },
-//     { name: "Offers", path: "/offers" },
-//     { name: "About Us", path: "/about-us" },
-//     { name: "Contact", path: "/contact" },
-//   ];
-
-//   const socialLinks = [
-//     { name: "Facebook", icon: FaFacebookF, url: "https://facebook.com" },
-//     { name: "Instagram", icon: FaInstagram, url: "https://instagram.com" },
-//     { name: "LinkedIn", icon: FaLinkedinIn, url: "https://linkedin.com" },
-//   ];
-
-//   const currentYear = new Date().getFullYear();
-
-//   return (
-//     <footer className="footer-section">
-//       <div className="footer-container">
-//         <div className="footer-grid">
-          
-//           {/* Logo & Info */}
-//           <div className="footer-col">
-//             <Link to="/">
-//               <div className="footer-logo-card">
-//                 <img
-//                   src={logo}
-//                   alt="Zaid Infotech Logo"
-//                   className="footer-logo-img"
-//                 />
-//               </div>
-//             </Link>
-//             <p className="footer-desc">
-//               Your trusted partner for high-performance laptop sales, rentals,
-//               expert repairs, and comprehensive IT services.
-//             </p>
-//           </div>
-
-//           {/* Quick Links */}
-//           <div className="footer-col">
-//             <div className="footer-title-wrap">
-//               <h3 className="footer-title">Quick Links</h3>
-//             </div>
-//             <ul className="footer-links-grid">
-//               {quickLinks.map((link) => (
-//                 <li key={link.name}>
-//                   <Link to={link.path} className="footer-link-item">
-//                     <ChevronRight className="footer-link-icon" />
-//                     <span>{link.name}</span>
-//                   </Link>
-//                 </li>
-//               ))}
-//             </ul>
-//           </div>
-
-//           {/* Contact Us */}
-//           <div className="footer-col">
-//             <div className="footer-title-wrap">
-//               <h3 className="footer-title">Contact Us</h3>
-//             </div>
-//             <div className="contact-list">
-//               <div className="contact-item">
-//                 <div className="contact-icon-box">
-//                   <MapPin size={16} strokeWidth={2} />
-//                 </div>
-//                 <span>
-//                   Shop No.232, 1st Floor,
-//                   <br />
-//                   M.K.N Road, Alandur,
-//                   <br />
-//                   Chennai, Tamil Nadu-600016
-//                 </span>
-//               </div>
-
-//               <a href="tel:+919092590725" className="contact-item">
-//                 <div className="contact-icon-box">
-//                   <Phone size={16} strokeWidth={2} />
-//                 </div>
-//                 <span>+91 9092590725</span>
-//               </a>
-
-//               <a href="mailto:info@zaidinfotech.in" className="contact-item">
-//                 <div className="contact-icon-box">
-//                   <Mail size={16} strokeWidth={2} />
-//                 </div>
-//                 <span>info@zaidinfotech.in</span>
-//               </a>
-//             </div>
-//           </div>
-
-//           {/* Follow Us */}
-//           <div className="footer-col">
-//             <div className="footer-title-wrap">
-//               <h3 className="footer-title">Follow Us</h3>
-//             </div>
-//             <div className="social-list">
-//               {socialLinks.map((social) => {
-//                 const Icon = social.icon;
-//                 return (
-//                   <a
-//                     key={social.name}
-//                     href={social.url}
-//                     target="_blank"
-//                     rel="noopener noreferrer"
-//                     className="social-link-item"
-//                   >
-//                     <div className="social-icon-box">
-//                       <Icon size={16} />
-//                     </div>
-//                     <span>{social.name}</span>
-//                   </a>
-//                 );
-//               })}
-//             </div>
-//           </div>
-
-//         </div>
-
-//         {/* Bottom Bar */}
-//         <div className="footer-bottom">
-//           <p className="copyright-text">
-//             &copy; {currentYear} Zaid Infotech. All Rights Reserved.
-//           </p>
-//           <div className="policy-links">
-//             <Link to="/privacy-policy">Privacy Policy</Link>
-//             <span className="policy-sep">|</span>
-//             <Link to="/terms-conditions">Terms & Conditions</Link>
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 import {
@@ -185,15 +36,11 @@ const Footer = () => {
     },
     {
       name: "Repair Service",
-      path: "/repair-service",
+      path: "/repair",
     },
     {
       name: "Categories",
-      path: "/categories",
-    },
-    {
-      name: "Offers",
-      path: "/offers",
+      path: "/shop",
     },
     {
       name: "About Us",
@@ -249,9 +96,10 @@ const Footer = () => {
 
           {/* =================================================
               LOGO & DESCRIPTION
+              (hidden on mobile via footer-col-brand)
           ================================================= */}
 
-          <div className="footer-col">
+          <div className="footer-col footer-col-brand">
 
             <Link to="/" aria-label="Zaid Infotech Home">
               <div className="footer-logo-card">
@@ -275,9 +123,10 @@ const Footer = () => {
 
           {/* =================================================
               QUICK LINKS
+              (hidden on mobile via footer-col-quicklinks)
           ================================================= */}
 
-          <div className="footer-col">
+          <div className="footer-col footer-col-quicklinks">
 
             <div className="footer-title-wrap">
               <h3 className="footer-title">

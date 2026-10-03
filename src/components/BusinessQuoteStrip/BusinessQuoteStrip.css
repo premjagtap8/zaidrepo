@@ -1,0 +1,74 @@
+/* =====================================================
+   BUSINESS QUOTE STRIP
+   Hidden by default, so desktop is not affected.
+   Shown only on phones (800px and below).
+===================================================== */
+
+.bq-strip {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .bq-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 16px 0;
+    padding: 10px 12px;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  .bq-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #16a34a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .bq-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .bq-title {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.2;
+  }
+
+  .bq-sub {
+    margin: 2px 0 0;
+    font-size: 0.75rem;
+    color: #475569;
+    line-height: 1.3;
+  }
+
+  .bq-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 10px;
+    background-color: #16a34a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .bq-btn:active {
+    background-color: #15803d;
+  }
+}
